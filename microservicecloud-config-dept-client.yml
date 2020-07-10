@@ -46,9 +46,9 @@ spring:
    datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/cloudDB02
+    url: jdbc:mysql://localhost:3306/clouddb02
     username: root
-    password: root
+    password: "0911"
     dbcp2:
       min-idle: 5
       initial-size: 5
@@ -57,10 +57,8 @@ spring:
   
   
 mybatis:
-  config-location: classpath:mybatis/mybatis.cfg.xml
-  type-aliases-package: com.xr.springcloud.entities
-  mapper-locations:
-  - classpath:mybatis/mapper/**/*.xml
+  type-aliases-package: com.xr.springcloud.entities    # 所有Entity别名类所在包
+  mapper-locations: classpath:dao/*                    # mapper映射文件
  
 eureka: 
   client: #客户端注册进eureka服务列表内
